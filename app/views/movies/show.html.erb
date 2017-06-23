@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<p id="notice"><%= notice %></p>
+
+<dl class="dl-horizontal">
+  
+  <div style="color: blue" >
+  <dt><strong>Name:</strong></dt>
+  <dd><%= @movie.name %></dd>
+</div>
+ 
+ 
+  <div  >
+  <dt><strong>Author:</strong></dt>
+  <dd><%= @movie.author %></dd>
+</div>
+
+  
+  <div  >
+  <dt><strong>Number:</strong></dt>
+  <dd><%= @movie.number %></dd>
+</div>
+
+  
+</dl>
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
