@@ -3,6 +3,7 @@ class CreateBooks < ActiveRecord::Migration
     create_table :books do |t|
       t.string :name
       t.string :author
+      t.integer :number
 
       t.timestamps null: false
     end

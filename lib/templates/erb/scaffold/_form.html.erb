@@ -14,6 +14,9 @@
     </div>
   <%% end %>
 
+
+
+
 <% attributes.each do |attribute| -%>
   <div class="form-group">
 <% if attribute.password_digest? -%>
@@ -24,10 +27,16 @@
     <%%= f.label :password_confirmation %><br>
     <%%= f.password_field :password_confirmation %>
 <% else -%>
-<div class="col-lg-10">
-    <%%= f.label :<%= attribute.column_name %> %><br>
-    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> %>
-</div>
+  <%%= f.label :<%= attribute.column_name %> %>
+<% if attribute.type == :integer -%>
+  <%%= f.text_field :<%= attribute.column_name %>, { :class => 'form-control', :data => {
+      'slider-id' => '<%= attribute.column_name %>Slider', 'slider-min' => '0',
+      'slider-max' => '20', 'slider-step' => '1' } } %>
+  <%%= javascript_tag '$("#<%= singular_table_name %>_<%= attribute.column_name %>").slider({});' %>
+
+<% else -%>
+  <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>, :class => 'form-control' %>
+<% end -%>
 <% end -%>
   </div>
 <% end -%>

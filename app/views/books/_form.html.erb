@@ -14,17 +14,24 @@
     </div>
   <% end %>
 
+
+
+
   <div class="form-group">
-<div class="col-lg-10">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-</div>
+  <%= f.label :name %>
+  <%= f.text_field :name, :class => 'form-control' %>
   </div>
   <div class="form-group">
-<div class="col-lg-10">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-</div>
+  <%= f.label :author %>
+  <%= f.text_field :author, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :number %>
+  <%= f.text_field :number, { :class => 'form-control', :data => {
+      'slider-id' => 'numberSlider', 'slider-min' => '0',
+      'slider-max' => '20', 'slider-step' => '1' } } %>
+  <%= javascript_tag '$("#book_number").slider({});' %>
+
   </div>
   <div class="form-group">
    <div class="col-lg-offset-2 col-lg-10">
