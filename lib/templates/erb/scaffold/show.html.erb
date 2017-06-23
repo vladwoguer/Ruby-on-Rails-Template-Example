@@ -5,11 +5,19 @@
 
 <dl class="dl-horizontal">
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
-<p>
+ <% if attribute.name == 'name' -%> 
+  <div style="color: blue" >
   <dt><strong><%= attribute.human_name %>:</strong></dt>
   <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
-</p>
+</div>
+ 
+<% else -%>
+ <div  >
+  <dt><strong><%= attribute.human_name %>:</strong></dt>
+  <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
+</div>
 
+ <% end -%> 
 <% end -%>
 </dl>
 <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %> |

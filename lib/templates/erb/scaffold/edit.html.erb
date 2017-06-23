@@ -1,3 +1,10 @@
+
+<h1>Editing <%= singular_table_name.titleize %></h1>
+
+<%%= render 'form' %>
+
+<%%= link_to 'Show', @<%= singular_table_name %> %> |
+<%%= link_to 'Back', <%= index_helper %>_path %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -8,9 +15,3 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.min.js"></script>
-<h1>Editing <%= singular_table_name.titleize %></h1>
-
-<%%= render 'form' %>
-
-<%%= link_to 'Show', @<%= singular_table_name %> %> |
-<%%= link_to 'Back', <%= index_helper %>_path %>
